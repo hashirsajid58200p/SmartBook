@@ -76,13 +76,13 @@ body {
 }
 
 .nav-links a {
-  color: var(--foreground);
+  color: var(--secondary-foreground);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--foreground);
 }
 
 /* Hamburger Menu */
@@ -184,7 +184,7 @@ body {
 
 .hero-home {
   position: relative;
-  background-image: url("./images/hero-meeting-room.jpg");
+  background-image: url("../images/hero-meeting-room.jpg");
   background-size: cover;
   background-position: center;
   padding: 8rem 0;
@@ -699,7 +699,7 @@ body {
 }
 
 .nav-links a.active {
-  color: var(--primary);
+  color: var(--foreground);
   font-weight: 500;
 }
 
@@ -740,18 +740,18 @@ body {
   }
 
   .nav-links a:hover {
-    color: #000;
+    color: var(--foreground);
   }
 
   .nav-links .btn-outline {
     background: #fff;
     border: none;
-    color: #000;
+    color: var(--foreground);
   }
 
   .nav-links .btn-hero {
     background: #fff;
-    color: #000;
+    color: var(--foreground);
     border: none;
   }
 
