@@ -48,7 +48,7 @@
             real-time availability.
           </p>
           <div class="hero-buttons">
-            <button class="btn btn-hero btn-lg">
+            <button id="schedule-button" class="btn btn-hero btn-lg">
               Schedule Room Booking
               <svg
                 class="icon-sm"
@@ -63,7 +63,9 @@
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
             </button>
-            <button class="btn btn-custom btn-lg">Instant Book Now</button>
+            <button id="instant-button" class="btn btn-custom btn-lg">
+              Instant Book Now
+            </button>
           </div>
         </div>
       </div>
@@ -383,6 +385,135 @@
         <div class="footer-bottom">© 2025 SmartBook. All rights reserved.</div>
       </div>
     </footer>
+
+    <!-- Schedule Popup -->
+    <div id="schedule-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>Select Date and Time</h2>
+        <input type="date" id="schedule-date" />
+        <input type="time" id="schedule-time" />
+        <button id="confirm-schedule" class="btn btn-hero">Confirm</button>
+        <div id="schedule-link-section" style="display: none">
+          <p class="hero-description">
+            You will get the link on the selected date and time.
+          </p>
+          <div class="link-container">
+            <input
+              type="text"
+              id="schedule-link"
+              class="form-group-input"
+              value="https://example.com/meeting-link"
+              readonly
+            />
+            <button id="copy-schedule" class="btn btn-hero btn-icon">
+              <svg
+                class="icon-sm"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </button>
+            <button id="share-schedule" class="btn btn-hero btn-icon">
+              <svg
+                class="icon-sm"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                <polyline points="16 6 12 2 8 6"></polyline>
+                <line x1="12" y1="2" x2="12" y2="15"></line>
+              </svg>
+            </button>
+            <button id="visit-schedule" class="btn btn-hero btn-icon">
+              <svg
+                class="icon-sm"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instant Popup -->
+    <div id="instant-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>Instant Meeting Link</h2>
+        <div class="link-container">
+          <input
+            type="text"
+            id="instant-link"
+            class="form-group-input"
+            value="https://example.com/instant-meeting"
+            readonly
+          />
+          <button id="copy-instant" class="btn btn-hero btn-icon">
+            <svg
+              class="icon-sm"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              ></path>
+            </svg>
+          </button>
+          <button id="share-instant" class="btn btn-hero btn-icon">
+            <svg
+              class="icon-sm"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </button>
+          <button id="visit-instant" class="btn btn-hero btn-icon">
+            <svg
+              class="icon-sm"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
 
     <script src="script.js"></script>
   </body>

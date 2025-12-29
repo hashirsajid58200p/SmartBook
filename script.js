@@ -59,3 +59,114 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");
 });
+
+// Notification function
+function showNotification(text) {
+  const notif = document.getElementById("notification");
+  notif.textContent = text;
+  notif.style.opacity = "1";
+  setTimeout(() => {
+    notif.style.opacity = "0";
+  }, 2000);
+}
+
+// Popup logic for Schedule Room Booking
+const scheduleButton = document.getElementById("schedule-button");
+const schedulePopup = document.getElementById("schedule-popup");
+const closeSchedule = schedulePopup.querySelector(".close-popup");
+const confirmSchedule = document.getElementById("confirm-schedule");
+const scheduleLinkSection = document.getElementById("schedule-link-section");
+const copySchedule = document.getElementById("copy-schedule");
+const shareSchedule = document.getElementById("share-schedule");
+const visitSchedule = document.getElementById("visit-schedule");
+const scheduleLinkInput = document.getElementById("schedule-link");
+
+scheduleButton.addEventListener("click", () => {
+  schedulePopup.style.display = "block";
+  scheduleLinkSection.style.display = "none";
+});
+
+closeSchedule.addEventListener("click", () => {
+  schedulePopup.style.display = "none";
+});
+
+confirmSchedule.addEventListener("click", () => {
+  // For now, generate a dummy link since backend is later
+  scheduleLinkInput.value = "https://smartbook.com/meet/123456";
+  scheduleLinkSection.style.display = "block";
+});
+
+copySchedule.addEventListener("click", () => {
+  navigator.clipboard.writeText(scheduleLinkInput.value).then(() => {
+    showNotification("Copied to clipboard");
+  });
+});
+
+shareSchedule.addEventListener("click", () => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Scheduled Meeting Link",
+        url: scheduleLinkInput.value,
+      })
+      .then(() => showNotification("Shared successfully"))
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          showNotification("Share not supported");
+        }
+      });
+  } else {
+    showNotification("Share not supported");
+  }
+});
+
+visitSchedule.addEventListener("click", () => {
+  window.open(scheduleLinkInput.value, "_blank");
+});
+
+// Popup logic for Instant Book Now
+const instantButton = document.getElementById("instant-button");
+const instantPopup = document.getElementById("instant-popup");
+const closeInstant = instantPopup.querySelector(".close-popup");
+const copyInstant = document.getElementById("copy-instant");
+const shareInstant = document.getElementById("share-instant");
+const visitInstant = document.getElementById("visit-instant");
+const instantLinkInput = document.getElementById("instant-link");
+
+instantButton.addEventListener("click", () => {
+  // For now, generate a dummy link since backend is later
+  instantLinkInput.value = "https://smartbook.com/meet/instant-789";
+  instantPopup.style.display = "block";
+});
+
+closeInstant.addEventListener("click", () => {
+  instantPopup.style.display = "none";
+});
+
+copyInstant.addEventListener("click", () => {
+  navigator.clipboard.writeText(instantLinkInput.value).then(() => {
+    showNotification("Copied to clipboard");
+  });
+});
+
+shareInstant.addEventListener("click", () => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Instant Meeting Link",
+        url: instantLinkInput.value,
+      })
+      .then(() => showNotification("Shared successfully"))
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          showNotification("Share not supported");
+        }
+      });
+  } else {
+    showNotification("Share not supported");
+  }
+});
+
+visitInstant.addEventListener("click", () => {
+  window.open(instantLinkInput.value, "_blank");
+});
