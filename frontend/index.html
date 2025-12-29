@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartBook - Smart Meeting Room & Equipment Booking System</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
     <meta
       name="description"
       content="Streamline your workspace with intelligent meeting room and equipment management. Book spaces and resources in seconds with real-time availability."
@@ -11,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <!-- Navigation -->
     <nav class="nav">
       <div class="container">
         <div class="nav-content">
@@ -37,7 +37,6 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero hero-home">
       <div class="container">
         <div class="hero-content">
@@ -71,7 +70,6 @@
       </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="features">
       <div class="container">
         <div class="section-header">
@@ -212,7 +210,6 @@
       </div>
     </section>
 
-    <!-- Benefits Section -->
     <section id="benefits" class="benefits">
       <div class="container">
         <div class="benefits-wrapper">
@@ -314,7 +311,6 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section id="contact" class="cta">
       <div class="container">
         <div class="cta-content">
@@ -324,7 +320,7 @@
             streamline their meeting room and equipment management
           </p>
           <div class="cta-buttons">
-            <button class="btn btn-hero btn-lg">
+            <button id="schedule-button-cta" class="btn btn-hero btn-lg">
               Schedule Room Booking
               <svg
                 class="icon-sm"
@@ -339,13 +335,14 @@
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
             </button>
-            <button class="btn btn-custom btn-lg">Instant Book Now</button>
+            <button id="instant-button-cta" class="btn btn-custom btn-lg">
+              Instant Book Now
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
@@ -386,7 +383,6 @@
       </div>
     </footer>
 
-    <!-- Schedule Popup -->
     <div id="schedule-popup" class="popup">
       <div class="popup-content">
         <span class="close-popup">&times;</span>
@@ -453,7 +449,6 @@
       </div>
     </div>
 
-    <!-- Instant Popup -->
     <div id="instant-popup" class="popup">
       <div class="popup-content">
         <span class="close-popup">&times;</span>
@@ -512,7 +507,6 @@
       </div>
     </div>
 
-    <!-- Notification -->
     <div id="notification" class="notification"></div>
 
     <script src="assets/js/script.js"></script>
