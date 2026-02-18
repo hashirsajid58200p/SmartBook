@@ -26,7 +26,7 @@ function showNotification(text) {
 async function getWherebyMeetingLink() {
   try {
     // Local testing wala URL hata kar ye kar den:
-    const apiUrl = "/api/meetings/create";
+    const apiUrl = "http://localhost:3000/api/meetings/create";
 
     const response = await fetch(apiUrl, {
       method: "POST",
